@@ -1,8 +1,10 @@
 <?php
+//Функция вывода ошибки ввода
 function fail($str, $id = true)
 {
+    //Подключение фона(background)
     include('../BG.php');
-    echo '<title>РНР- Ошибка</title>';
+    echo '<title>Ошибка ввода</title>';
     if ($id) {
         echo "<p>Пожалуйста, укажите $str.</p>";
     } else {
@@ -11,6 +13,7 @@ function fail($str, $id = true)
     echo "<p><a href='../index.php'>Заполнить заново</a></p>";
     exit();
 }
+//Проверка на случайное попадание
 if (isset($_POST)) {
 
     //Проверки
@@ -38,22 +41,34 @@ if (isset($_POST)) {
     }
     //Подключение БД
     require('../connect_bd.php');
-
+    //Запись в переменную SQL запроса
     $sql = "INSERT INTO books (title, price) VALUES ('$name', '$price')";
+    //Отправка запроса БД
     $dbc->query($sql);
+    //Отправка запроса БД и запись результата в переменную
     $sql = $dbc->query("SELECT id FROM books");
+    //Преобразование результата запроса в массив
     $sql = $sql->fetchAll();
+    //Запись в одномерный массив последней строки двумерного
     $sql = $sql[count($sql)-1];
+    //Запись в переменную ID книги
     $idB = $sql['id'];
-
+    
+    //Запись в переменную SQL запроса
     $sql = "INSERT INTO authors (name) VALUES ('$name_a')";
+    //Отправка запроса БД
     $dbc->query($sql);
+    //Отправка запроса БД и запись результата в переменную
     $sql = $dbc->query("SELECT id FROM authors");
+    //Преобразование результата запроса в двумерный массив
     $sql = $sql->fetchAll();
+    //Запись в одномерный массив последней строки двумерного
     $sql = $sql[count($sql)-1];
+    //Запись в переменную ID автора
     $idA = $sql['id'];
-
+    //Запись в переменную SQL запроса
     $sql = "INSERT INTO books_authors (id_author, id_books) VALUES ('$idA','$idB')";
+    //Отправка запроса БД
     $dbc->query($sql);
 
 
