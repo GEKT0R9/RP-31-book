@@ -2,15 +2,21 @@
 include('BG.php');
 //подключение бд
 require('connect_bd.php');
-echo '<table>';
-echo '<div style="text-align: center; margin-top:30px;">
-      <button class="icon-btn add-btn">
+echo '<div><table class="form">';
+echo '<button class="icon-btn add-btn">
         <div class="add-icon"></div>
         <div type="" class="btn-txt"><a href="form/addbook.php">Добавить книгу</a></div>
       </button>
       <button  class="icon-btn add-btn">
         <div class="btn-txt"><a href="form/delete.php">Удалить книгу</a></div>
-      </button></div>';
+      </button>
+      <button class="icon-btn add-btn">
+        <div class="add-icon"></div>
+        <div type="" class="btn-txt"><a href="form/addwriter.php">Добавить автора</a></div>
+      </button>
+      <button  class="icon-btn add-btn">
+        <div class="btn-txt"><a href="form/deletewriter.php">Удалить автора</a></div>
+      </button>';
 //echo '<a href="form/addbook.php"></a>
 //      <a href="form/delete.php"></a>';
 
@@ -26,4 +32,4 @@ foreach ($sql as $row) {
     echo '</tr>';
 
 }
-echo '</table>';
+echo '</table></div>';

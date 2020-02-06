@@ -2,7 +2,7 @@ body {
     color: white;
     display: block;
     /*margin: auto;*/
-    margin: 18% auto;
+    margin: 18% auto 0 auto;
     text-align: center;
     /*!*position: absolute;*!*/
     /*left: 32%;*/
@@ -10,7 +10,7 @@ body {
 }
 
 a {
-    color: red;
+    color: black;
     font-size: 18px;
     text-decoration: none;
     padding: 7px;
@@ -31,7 +31,7 @@ a {
 /*    border: none;*/
 /*}*/
 p a {
-    color: red;
+    color: black;
     font-size: 20px;
     text-decoration: none;
     background-color: white;
@@ -52,7 +52,7 @@ p a {
 }
 
 .add-btn:hover {
-    width: 180px;
+    width: 190px;
 }
 
 .add-btn::before,
@@ -63,7 +63,7 @@ p a {
     height: 4px;
     width: 10px;
     top: calc(50% - 2px);
-    background: red;
+    background: black;
 }
 
 .add-btn::after {
@@ -107,7 +107,7 @@ p a {
     height: 20px;
     width: 2px;
     top: calc(50% - 10px);
-    background: red;
+    background: black;
     overflow: hidden;
 }
 
@@ -152,7 +152,7 @@ table {
 
 }
 
-form {
+form{
     padding: 1%;
     margin: 0 auto;
     display: block;

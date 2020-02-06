@@ -10,7 +10,7 @@ if (empty($_POST)) {
         echo '<select class="form-control" name="marka">' .
             '<option value="Выберите книгу" selected="" disabled="">Выберите книгу</option>';
         for ($i = 0;$i<count($result);++$i){
-            echo '<option value="'.$result[$i]['idA'].'|'.$result[$i]['idB'].'">'.$result[$i]['title'].' '.$result[$i]['name'].'</option>';
+            echo '<option value="'.$result[$i]['idA'].'|'.$result[$i]['idB'].'">'.$result[$i]['title'].' - '.$result[$i]['name'].'</option>';
         }
         echo '</select></p>';
     } else {
