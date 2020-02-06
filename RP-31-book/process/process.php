@@ -13,7 +13,7 @@ function fail($str, $id = true)
     echo "<p><a href='../index.php'>Заполнить заново</a></p>";
     exit();
 }
-//Проверка на случайное попадание
+//Проверка на заполненость метода POST
 if (isset($_POST)) {
 
     //Проверки
