@@ -1,8 +1,6 @@
 <?php
 //Пороверка блока try на ошибки
 try {
-//    $dbc = new PDO("mysql:host=localhost;dbname=bookshop;charset=utf8", "root", "");
-//    $dbc->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 //Запись в переменную данные о базе данных
     $dsn = "mysql:host=localhost;dbname=book_shop;charset=utf8";
 //Запись в переменную параметры PDO

@@ -70,10 +70,6 @@ if (isset($_POST)) {
     $sql = "INSERT INTO books_authors (id_author, id_books) VALUES ('$idA','$idB')";
     //Отправка запроса БД
     $dbc->query($sql);
-
-
-    //Перессылка на главную
-    header('Location: ../index.php');
-
-    //////////////////////////////////////
 }
+//Перессылка на главную
+header('Location: ../index.php');

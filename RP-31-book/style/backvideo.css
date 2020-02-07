@@ -1,17 +1,14 @@
 body {
     color: white;
     display: block;
-    /*margin: auto;*/
     margin: 18% auto 0 auto;
     text-align: center;
-    /*!*position: absolute;*!*/
-    /*left: 32%;*/
-    /*top: 38%;*/
+
 }
 
 a {
     color: black;
-    font-size: 18px;
+    font-size: 16px;
     text-decoration: none;
     padding: 7px;
     margin: 0 auto;
@@ -19,17 +16,6 @@ a {
     width: 150px;
     height: 25px;
 }
-
-
-/*input{*/
-/*    color: red;*/
-/*    font-size: 20px;*/
-/*    background-color: white;*/
-/*    border-radius: 25px;*/
-/*    width: 215px;*/
-/*    height: 35px;*/
-/*    border: none;*/
-/*}*/
 p a {
     color: black;
     font-size: 20px;
@@ -41,8 +27,8 @@ p a {
 }
 
 .icon-btn {
-    width: 50px;
-    height: 50px;
+    width: 35px;
+    height: 35px;
     border: 1px solid #cdcdcd;
     background: white;
     border-radius: 25px;
@@ -67,14 +53,14 @@ p a {
 }
 
 .add-btn::after {
-    right: 14px;
+    right: 9px;
     overflow: hidden;
     border-top-right-radius: 2px;
     border-bottom-right-radius: 2px;
 }
 
 .add-btn::before {
-    left: 14px;
+    left: 9px;
     border-top-left-radius: 2px;
     border-bottom-left-radius: 2px;
 }
@@ -104,21 +90,21 @@ p a {
     transition: all 0.2s ease-in-out;
     content: "";
     position: absolute;
-    height: 20px;
+    height: 16px;
     width: 2px;
-    top: calc(50% - 10px);
+    top: calc(55% - 10px);
     background: black;
     overflow: hidden;
 }
 
 .add-icon::before {
-    left: 22px;
+    left: 15px;
     border-top-left-radius: 2px;
     border-bottom-left-radius: 2px;
 }
 
 .add-icon::after {
-    right: 22px;
+    right: 15px;
     border-top-right-radius: 2px;
     border-bottom-right-radius: 2px;
 }
@@ -134,24 +120,17 @@ p a {
     height: 4px;
     top: calc(50% - 2px);
 }
-
-/*a:hover {*/
-/*    background: #CC003D;*/
-/*    cursor: pointer;*/
-/*}*/
 table {
     border-collapse: collapse;
     padding: 5px;
     margin: 1% auto 0;
-    font-size: 24px;
+    font-size: 21px;
 
     width: 500px;
     background: rgba(7, 7, 7, 0.8);
     border-radius: 3%;
     border: solid #fff;
-
 }
-
 form{
     padding: 1%;
     margin: 0 auto;
