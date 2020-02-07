@@ -7,17 +7,7 @@ require('connect_bd.php');
 echo '<div><table class="form">';
 echo '<button class="icon-btn add-btn">
         <div class="add-icon"></div>
-        <div type="" class="btn-txt"><a href="form/addbook.php">Добавить книгу</a></div>
-      </button>
-      <button  class="icon-btn add-btn">
-        <div class="btn-txt"><a href="form/delete.php">Удалить книгу</a></div>
-      </button>
-      <button class="icon-btn add-btn">
-        <div class="add-icon"></div>
-        <div type="" class="btn-txt"><a href="form/addwriter.php">Добавить автора</a></div>
-      </button>
-      <button  class="icon-btn add-btn">
-        <div class="btn-txt"><a href="form/deletewriter.php">Удалить автора</a></div>
+        <div type="" class="btn-txt"><a href="form/menu.php">Внести изменения</a></div>
       </button>';
 //Отправка запроса в БД и запись результата в переменную
 $sql = $dbc->query('SELECT books.*, authors.* FROM books,authors,books_authors WHERE books_authors.id_books = books.id AND books_authors.id_author = authors.id');
