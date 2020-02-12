@@ -1,6 +1,4 @@
 <?php
-var_dump($_POST);
-
 //Функция вывода ошибки ввода
 function fail($str, $id = true)
 {
@@ -47,35 +45,20 @@ if (isset($_POST)) {
         }
     }
     //Подключение БД
+    require('../connect_bd.php');
     //Запись в переменную SQL запроса
-    $sql = "INSERT INTO books (title, price) VALUES ('$name', '$price')";
+    $sql = "UPDATE books SET title = '$name', price = '$price' WHERE id = '$idB'";
     //Отправка запроса БД
     $dbc->query($sql);
     //Отправка запроса БД и запись результата в переменную
-    $sql = $dbc->query("SELECT id FROM books");
+    $sql = $dbc->query("SELECT id_author as idA FROM books_authors WHERE id_books = '$idB'");
     //Преобразование результата запроса в массив
     $sql = $sql->fetchAll();
     //Запись в одномерный массив последней строки двумерного
-    $sql = $sql[count($sql) - 1];
-    //Запись в переменную ID книги
-    $idB = $sql['id'];
-
-    //Запись в переменную SQL запроса
-    $sql = "INSERT INTO authors (name) VALUES ('$name_a')";
-    //Отправка запроса БД
-    $dbc->query($sql);
-    //Отправка запроса БД и запись результата в переменную
-    $sql = $dbc->query("SELECT id FROM authors");
-    //Преобразование результата запроса в двумерный массив
-    $sql = $sql->fetchAll();
-    //Запись в одномерный массив последней строки двумерного
-    $sql = $sql[count($sql) - 1];
-    //Запись в переменную ID автора
-    $idA = $sql['id'];
-    //Запись в переменную SQL запроса
-    $sql = "INSERT INTO books_authors (id_author, id_books) VALUES ('$idA','$idB')";
-    //Отправка запроса БД
-    $dbc->query($sql);
+    for($i = 0;$i<count($sql);++$i){
+        $idA = $sql[$i]['idA'];
+        $dbc->query("UPDATE authors SET name = '$name_a[$i]' WHERE id = '$idA'");
+    }
 }
 //Перессылка на главную
 header('Location: ../index.php');
