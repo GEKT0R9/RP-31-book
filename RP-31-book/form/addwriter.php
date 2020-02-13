@@ -11,6 +11,7 @@ $result = $dbc->query('SELECT title, id FROM books;');
 //Преобразование результата запроса в массив
 $result = $result->fetchAll();
 //Проверка массива на заполненость
+//Создание списка книг на форме
 if (count($result) > 0) {
     echo '<select class="form-control" name="book">' .
         '<option value="Выберите книгу" selected="" disabled="">Выберите книгу</option>';

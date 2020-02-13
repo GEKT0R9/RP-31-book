@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Фев 05 2020 г., 14:40
+-- Время создания: Фев 13 2020 г., 08:15
 -- Версия сервера: 5.7.25
 -- Версия PHP: 7.2.22
 
@@ -38,8 +38,13 @@ CREATE TABLE `authors` (
 --
 
 INSERT INTO `authors` (`id`, `name`) VALUES
-(7, 'Стивен Кинг'),
-(11, 'Маргарет Митчелл');
+(20, 'Дж. К. Роулинг'),
+(22, 'Sapcovsky'),
+(23, 'MOCHIZUKI Jun'),
+(24, 'OKAMOTO Lynn'),
+(25, 'Андрей Петров'),
+(30, 'Владимир Васильев'),
+(31, 'Сергей Лукьяненко');
 
 -- --------------------------------------------------------
 
@@ -58,8 +63,12 @@ CREATE TABLE `books` (
 --
 
 INSERT INTO `books` (`id`, `title`, `price`) VALUES
-(2, 'Зеленая миля', 250),
-(8, 'Унесенные ветром', 125);
+(12, 'Гарри Поттер и узник Азкабана', 500),
+(14, 'Witcher', 700),
+(15, 'Pandora Hearts', 500),
+(16, 'Elfen Lied', 600),
+(17, 'This is Jake', 225),
+(18, 'Дневной Дозор', 300);
 
 -- --------------------------------------------------------
 
@@ -77,8 +86,13 @@ CREATE TABLE `books_authors` (
 --
 
 INSERT INTO `books_authors` (`id_author`, `id_books`) VALUES
-(7, 2),
-(11, 8);
+(20, 12),
+(22, 14),
+(23, 15),
+(24, 16),
+(25, 17),
+(30, 18),
+(31, 18);
 
 --
 -- Индексы сохранённых таблиц
@@ -113,13 +127,13 @@ ALTER TABLE `books_authors`
 -- AUTO_INCREMENT для таблицы `authors`
 --
 ALTER TABLE `authors`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
 -- AUTO_INCREMENT для таблицы `books`
 --
 ALTER TABLE `books`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- Ограничения внешнего ключа сохраненных таблиц

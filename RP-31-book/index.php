@@ -28,7 +28,7 @@ echo '<tr class="tr"><td>Название</td><td>Цена</td><td>Автор</t
 foreach ($sql as $row) {
     echo '<tr class="tr">';
     echo '<td>' . $row['title'] . '</td>';
-    echo '<td>' . $row['price'] . '</td>';
+    echo '<td>' . $row['price'] . ' руб.</td>';
     echo '<td>' . $row['name'] . '</td>';
     echo '</tr>';
 

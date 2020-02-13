@@ -4,13 +4,15 @@ function fail($str, $id = true)
 {
     //Подключение фона(background)
     include('../BG.php');
+    //Вывод ошибки
     echo '<title>Ошибка ввода</title>';
     if ($id) {
         echo "<p>Пожалуйста, укажите $str.</p>";
     } else {
         echo "<p>$str.</p>";
     }
-    echo "<p><a href='../index.php'>Заполнить заново</a></p>";
+    //Кнопка "Заполнить заново"
+    echo "<p><a href='../form/addbook.php'>Заполнить заново</a></p>";
     exit();
 }
 //Проверка на заполненость метода POST

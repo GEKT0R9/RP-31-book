@@ -1,5 +1,4 @@
 <?php
-
 //Подключение БД
 require('../connect_bd.php');
 //Проверка на наличие данных в методе POST
@@ -22,6 +21,7 @@ if (empty($_POST)) {
     //Преобразование результата запроса в массив
     $result = $result->fetchAll();
     //Проверка массива на заполненость
+    //Создание списка книг на форме
     if (count($result) > 0) {
         echo '<select class="form-control" name="marka">' .
             '<option value="Выберите книгу" selected="" disabled="">Выберите книгу</option>';
@@ -45,16 +45,20 @@ if (empty($_POST)) {
     $result = $dbc->query('SELECT authors.name FROM books_authors, authors WHERE authors.id = books_authors.id_author AND id_books = ' . $_POST['marka']);
     //Преобразование результата запроса в переменную
     $resultA = $result->fetchAll();
+    //Запись в переменную результат запроса БД
     $result = $dbc->query('SELECT title,price FROM books WHERE id = ' . $_POST['marka']);
     //Преобразование результата запроса в переменную
     $result = $result->fetchAll()[0];
+    //Работа с HTML формой
     echo '<form method="POST" action="' . '../process/process_editbook.php' . '">
         Название книги: <input name="name" placeholder="Название книги" value="' . $result['title'] . '"><br>
         Цена:<input name="price" placeholder="Цена" value="' . $result['price'] . '" ><br>
         <input name="idB" value="'.$_POST['marka'].'|'.count($resultA).'" style="display: none;">';
+    //Форма полей ввода для авторов
     for ($i = 0; $i < count($resultA); ++$i) {
         echo 'Автор №'.($i+1).'<input name="name_a' . $i . '" placeholder="Имя автора" value="' . $resultA[$i]['name'] . '"><br>';
     }
+    //Кнопки "Изменить" и "На главную"
     echo '<br><button type="submit" class="but">Изменить</button>
           <p><a href=\'../index.php\'>На главную</a></p>
           </form>';

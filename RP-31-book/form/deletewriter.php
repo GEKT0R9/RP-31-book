@@ -12,6 +12,7 @@ if (empty($_POST)) {
     //Преобразование результата запроса в массив
     $result = $result->fetchAll();
     //Проверка массива на заполненость
+    //Создание списка авторов на форме
     if (count($result) > 0) {
         echo '<select class="form-control" name="marka">' .
             '<option value="Выберите автора" selected="" disabled="">Выберите автора</option>';
@@ -22,6 +23,7 @@ if (empty($_POST)) {
     } else {
         echo '<p>В настоящее время авторов нет.</p>';
     }
+    //Checkbox
     echo '<input type="checkbox" id="all" name="all"><label for="all">Удалить автора из всех книг</label>';
     //Кнопка "Удалить"
     echo '<p><input id="butt" type="submit" value="Удалить"></p>';
